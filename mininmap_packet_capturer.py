@@ -43,14 +43,9 @@ while True:
                 (src_port, dest_port, sequence, ack, urg, flagAck, flagpsh, flagRst, flagSyn, flagFin, data) = tcp(data)
                 if(dest_port == 3000 and flagAck == 1 and flagSyn == 1):
                     src_ip_address = '.'.join(map(str, src))
-                    dest_ip_address = '.'.join(map(str, target))
-                    
+                                        
                     src_ip_address = src_ip_address.replace('...', ' ')
                     src_ip_address = src_ip_address.replace('.', '')
                     src_ip_address = src_ip_address.replace(' ', '.')
-                    
-                    dest_ip_address = dest_ip_address.replace('...', ' ')
-                    dest_ip_address = dest_ip_address.replace('.', '')
-                    dest_ip_address = dest_ip_address.replace(' ', '.')
                     
                     print(f'\tPort {src_port} is open on {src_ip_address}')
